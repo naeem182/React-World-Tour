@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Country.css"
 
-const Country = ({ country }) => {
+const Country = ({ country, handlevisitedCountries }) => {
 
     const { name, flags, population, area } = country;
 
@@ -12,7 +12,7 @@ const Country = ({ country }) => {
     }
 
 
-
+    // console.log(handlevisitedCountries)
     return (
         // conditional css
         <div className={`country ${visited && 'visited'}`}>
@@ -23,6 +23,9 @@ const Country = ({ country }) => {
                 }} src={flags.png} alt="" />
                 <p>poulation:{population}</p>
                 <p>Area:{area}</p>
+                <button style={{
+                    background: "purple"
+                }} onClick={handlevisitedCountries}>Marks as read</button>
                 {/* <button style={{
                     background: "purple"
                 }} onClick={handlevisit}>visit</button> */}
