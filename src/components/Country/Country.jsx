@@ -7,7 +7,9 @@ const Country = ({ country }) => {
         <div className="country">
             <div className="">
                 <h3>country: {name?.common}</h3>
-                <img src={flags.png} alt="" />
+                <img style={{
+                    height: "100px"
+                }} src={flags.png} alt="" />
                 <p>poulation:{population}</p>
                 <p>Area:{area}</p>
                 <button style={{
