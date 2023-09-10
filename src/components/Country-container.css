@@ -4,3 +4,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.visited {
+    background-color: rgb(148, 148, 138);
+}

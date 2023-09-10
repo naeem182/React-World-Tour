@@ -14,7 +14,8 @@ const Country = ({ country }) => {
 
 
     return (
-        <div className="country">
+        // conditional css
+        <div className={`country ${visited && 'visited'}`}>
             <div className="">
                 <h3>country: {name?.common}</h3>
                 <img style={{
