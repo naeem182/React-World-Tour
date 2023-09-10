@@ -23,6 +23,7 @@ const Country = ({ country, handlevisitedCountries, handlevisitedFlag }) => {
                 }} src={flags.png} alt="" />
                 <p>poulation:{population}</p>
                 <p>Area:{area}</p>
+                {/* 2 onclick in one button ............*/}
                 <button
                     style={{
                         background: "purple"
@@ -34,9 +35,10 @@ const Country = ({ country, handlevisitedCountries, handlevisitedFlag }) => {
                 >
                     Marks as read
                 </button>
-                <button style={{
+                {/* .................. */}
+                {/* <button style={{
                     background: "purple"
-                }} onClick={() => handlevisitedFlag(country.flags.png)}>Marks as flag</button>
+                }} onClick={() => handlevisitedFlag(country.flags.png)}>Marks as flag</button> */}
                 {/* <button style={{
                     background: "purple"
                 }} onClick={handlevisit}>visit</button> */}
