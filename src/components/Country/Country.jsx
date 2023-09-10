@@ -2,11 +2,18 @@ import "./Country.css"
 
 const Country = ({ country }) => {
 
-    const { name, flags } = country;
+    const { name, flags, population, area } = country;
     return (
         <div className="country">
-            <h3>country: {name?.common}</h3>
-            <img src={flags.png} alt="" />
+            <div className="">
+                <h3>country: {name?.common}</h3>
+                <img src={flags.png} alt="" />
+                <p>poulation:{population}</p>
+                <p>Area:{area}</p>
+                <button style={{
+                    background: "purple"
+                }}>visit</button>
+            </div>
         </div>
     )
 }
