@@ -6,8 +6,10 @@ import "./Country-container.css"
 const Countries = () => {
 
     const [countries, setcountries] = useState([]);
-    //
+    //country show in upper
     const [visitedCountries, setvisitedCountries] = useState([])
+    //flag show in upper
+    const [visitedFlag, setvisitedFlag] = useState([])
 
 
     useEffect(() => {
@@ -33,23 +35,45 @@ const Countries = () => {
         const newvisitedCountries = [...visitedCountries, country];
         setvisitedCountries(newvisitedCountries)
     }
+    ///////////
+    const handlevisitedFlag = (flag) => {
+        // console.log('fag')
+        const newvisitedFlag = [...visitedFlag, flag];
+        setvisitedFlag(newvisitedFlag)
+    }
 
 
     return (
         <div>
             <h3>Countries:{countries.length}</h3>
+            {/* visited country */}
             <div>
                 <h5>visited countries: {visitedCountries.length}</h5>
                 <ul>
-                    {visitedCountries.map(country => <li key={country.cca3}>{country.name.common}</li>)}
+                    {visitedCountries.map(country => <li key={country.cca3}>{country.name.common}{ } </li>)}
+
+                </ul>
+            </div>
+            {/* /////flag */}
+            <div>
+                <h5>visited countries flag</h5>
+                <ul>
+
+                    {visitedFlag.map(flag => <img style={{
+                        height: "100px",
+                        width: "100px"
+                    }} src={flag} ></img>)}
                 </ul>
             </div>
 
-
+            {/* display */}
             <div className="country-container">
                 {
                     countries.map(country => <Country key={country.cca3} country={country}
-                        handlevisitedCountries={() => handlevisitedCountries(country)}></Country>)
+                        handlevisitedCountries={handlevisitedCountries}
+                        handlevisitedFlag={handlevisitedFlag}
+
+                    ></Country>)
                 }
             </div>
         </div>
