@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react"
+import Country from "./Country/Country";
 
 const Countries = () => {
 
-    const [count, setcount] = useState([]);
+    const [countries, setcountries] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,6 +13,7 @@ const Countries = () => {
                 const res = await fetch(URL);
                 const data = await res.json();
                 console.log(data);
+                setcountries(data)
 
             } catch (error) {
                 console.log(error)
@@ -22,7 +24,10 @@ const Countries = () => {
     }, [])
     return (
         <div>
-            <h3>Countries</h3>
+            <h3>Countries:{countries.length}</h3>
+            {
+                countries.map(country => <Country key={country.cca3} country={country}></Country>)
+            }
         </div>
     )
 }
